@@ -4,14 +4,12 @@ import { getMovieDetails } from "../../services/API";
 import s from './MovieDetailsPage.module.css';
 import Container from 'components/Container';
 import HeadingPage from '../HeadingPage';
-import { getMovieGenres } from 'services/API';
 
 
 function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [genresList, setGenresList] = useState([]);
 
   const getYear = () => new Date(movie.release_date).getFullYear();
 
@@ -27,10 +25,7 @@ function MovieDetailsPage() {
   const handleClick = () => navigate(location?.state?.from ?? '/');
 
 
-  useEffect(() => {
-        getMovieGenres().then(setGenresList);
-    }, []);
-        console.log(genresList)
+
 
   useEffect(() => {
     setLoading(true);
@@ -71,7 +66,7 @@ function MovieDetailsPage() {
         )}
         <hr />
         <div>
-          <h2>Additional Information</h2>          
+          <h2>Additional Information</h2>
           <NavLink
             to={`/movies/${movieId}/reviews`}
             style={({ isActive }) => (isActive ? activeClassName : undefined)}

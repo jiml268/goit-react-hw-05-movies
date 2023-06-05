@@ -29,6 +29,8 @@ const MovieDetailsCast = () => {
     };
     fetchCast();
   }, [movieId]);
+
+  
   return (
     <div>
       {loading && 'Loading...'}

@@ -25,17 +25,18 @@ const MoviesPage = () => {
   };
     
     return (
-        <>          
-            <ul>
-                <HeadingPage text={'Movie Search'}></HeadingPage>
-                 <SearchBox value={query} onChange={updateQueryString} />
+        <>    
+        <HeadingPage text={'Movie Search'}></HeadingPage>
+                 <SearchBox value={query} onChange={updateQueryString} />    
+            <ul className = {s.moviesPageList}>
+                
                 {movies.map((movie) => (
-       <li className={s.homePageItem} key={movie.id}>
+       <li className={s.moviesPageItem} key={movie.id}>
                 <Link to={`/movies/${movie.id}`}>
                     <div>
-                    <img className={s.homePageImage} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                    <img className={s.moviesPageeImage} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                     </div>
-                    <div className = {s.movieDetails}>
+                    <div className = {s.moviesPageDetails}>
                         <h3> {movie.title}  </h3>
                         <h4> Release Date: {movie.release_date}</h4>
                         </div>

@@ -17,7 +17,7 @@ const MovieDetailsReviews = () => {
         const res = await getMovieDetailsReviews(movieId);
         setReviews(res.results); 
       } catch (error) {
-      console.error('Smth wrong with fetch reviews on movie page', error);
+      console.error('Something went wrong with  movie reviews fetche', error);
       setError(error.message);
     }
     };

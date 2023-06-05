@@ -1,0 +1,25 @@
+.moviesPageList{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    justify-content: center;
+   
+}
+
+.moviesPageItem{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: solid 1px black;
+        padding: 10px;
+}
+
+.moviesPageeImage{
+    width: 300px;
+    height: 500px;
+}
+
+.moviesPageDetails{
+    width: 300px
+}

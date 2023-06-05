@@ -20,7 +20,7 @@ const MovieDetailsCast = () => {
         const res = await getMovieDetailsCast(movieId);
         setCast(res);
       } catch (error) {
-        console.error('Smth wrong with fetch cast on movie page', error);
+        console.error('Something went wrong with cast fatch', error);
         setError(error.message);
       }
       finally {

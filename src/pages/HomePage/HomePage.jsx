@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'services/API';
+
 import s from './HomePage.module.css'
 
 const HomePage = () => {
   
     const [trendingMovies, setTrendingMovies] = useState([]);
 
+
     useEffect(() => {
         getTrendingMovies().then(setTrendingMovies);
-    }, []);
         console.log(trendingMovies)
+    }, []);
 
     
 

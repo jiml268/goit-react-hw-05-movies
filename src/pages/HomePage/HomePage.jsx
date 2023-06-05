@@ -14,7 +14,6 @@ const HomePage = () => {
 
     useEffect(() => {
         getTrendingMovies().then(setTrendingMovies);
-        console.log(trendingMovies)
     }, []);
 
     

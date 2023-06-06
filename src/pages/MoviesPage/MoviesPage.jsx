@@ -3,13 +3,14 @@ import HeadingPage from 'pages/HeadingPage';
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom"
 import { getSearchMovies } from "../../services/API"
-import { Link } from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
 import s from './MoviesPage.module.css'
 
 
 const MoviesPage = () => {
     const [searchParams,setSearchParams] = useSearchParams();
     const [movies, setMovies] = useState([]);
+  const location = useLocation();
 
     const query = searchParams.get("query")?? "";
 
@@ -32,7 +33,7 @@ const MoviesPage = () => {
                 
                 {movies.map((movie) => (
        <li className={s.moviesPageItem} key={movie.id}>
-                <Link to={`/movies/${movie.id}`}>
+                        <Link to={`/movies/${movie.id}`} state={{from: location.pathname+ location.search}}>
                     <div>
                     <img className={s.moviesPageeImage} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                     </div>
